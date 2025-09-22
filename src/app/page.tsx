@@ -1,103 +1,161 @@
-import Image from "next/image";
+'use client';
 
-export default function Home() {
+// React imports
+import React from 'react';
+
+// Components imports
+import { MainLayout } from '@/Components/Layout/MainLayout';
+import { ArticleGrid } from '@/Components/Features/ArticleGrid';
+import { LoadingSpinner } from '@/Components/UI/Loading';
+
+// Hook imports
+import { useArticles } from '@/Hooks/UseArticles';
+import { useStats } from '@/Hooks/UseStats';
+
+
+/**
+ * Home Page components
+ * @returns 
+ */
+export default function HomePage() {
+  
+  // Hooks
+  const { articles, pagination, metadata, error, filters, fetchArticles, refreshArticles, applyFilters, isLoading, isError, isEmpty } = useArticles();
+  const { totalArticles, activeFeeds, articlesLast24h } = useStats();
+
+
+
+  /**
+   * Handle source filter from sidebar
+   * @param source 
+   */
+  const handleSourceFilter = (source: string | undefined) => {
+    applyFilters({ source });
+  };
+
+
+
+  /**
+   * Handle refresh button
+   */
+  const handleRefresh = async () => {
+    await refreshArticles();
+  };
+
+
+  
+  /**
+   * Sidebar props
+   */
+  const sidebarProps = {
+    sources: metadata?.sources.map(src => ({ source: src, count: 5 })) || [],
+    selectedSource: filters.source,
+    onSourceSelect: handleSourceFilter,
+  };
+
+
+
+  
+  /**
+   * Header stats
+   */
+  const headerStats = {
+    totalArticles,
+    articlesLast24h,
+    activeFeeds,
+  };
+
+
+///////////////////////////////////////////////////
+//////////////////   VIEWS    /////////////////////
+///////////////////////////////////////////////////
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <MainLayout onRefresh={handleRefresh} isRefreshing={isLoading} sidebarProps={sidebarProps} headerStats={headerStats}>
+      
+      {/* Main Content */}
+      <div className="space-y-6">
+        
+        {/* Simple info bar */}
+        <div className="flex items-center justify-between">
+          <div className="text-sm text-gray-600">
+            
+            {isLoading ? (
+              <div className="flex items-center">
+                <LoadingSpinner size="sm" className="mr-2" />Loading articles...</div>
+            ) : (
+              <span>{pagination.total.toLocaleString()} articles{filters.source && (
+                  <span className="ml-1 text-gray-500">from {filters.source}</span>)}
+              </span>
+            )}
+          </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          {/* Clear source filter if active */}
+          {filters.source && (
+            <button onClick={() => handleSourceFilter(undefined)} className="text-sm text-blue-600 hover:text-blue-700">Show all sources</button>
+          )}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+
+
+        {/* Error State */}
+        {isError && (
+          <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+            <div className="flex items-center">
+              <svg className="w-5 h-5 text-red-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <div>
+                <h3 className="text-sm font-medium text-red-800">Error loading articles</h3>
+                <p className="text-sm text-red-700 mt-1">{error}</p>
+              </div>
+              <button onClick={() => fetchArticles()} className="ml-auto bg-red-100 hover:bg-red-200 text-red-800 px-3 py-1 rounded text-sm">Retry</button>
+            </div>
+          </div>
+        )}
+
+
+
+        {/* Articles Grid */}
+        <ArticleGrid articles={articles} isLoading={isLoading} loadingCount={12} emptyState={ filters.source ? (
+              <div className="text-center">
+                <h3 className="text-lg font-medium text-gray-900 mb-2">No articles from {filters.source}</h3>
+                <p className="text-gray-500 mb-4">Try selecting a different source or view all articles.</p>
+                <button onClick={() => handleSourceFilter(undefined)} 
+                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md">Show all sources
+                </button>
+              </div>
+            ) : (
+              <div className="text-center">
+                <h3 className="text-lg font-medium text-gray-900 mb-2">No articles available</h3>
+                <p className="text-gray-500 mb-4">Refresh the feeds to load new articles.</p>
+                <button onClick={handleRefresh} 
+                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md">Refresh Feeds
+                </button>
+              </div>
+            )
+          }
+        />
+
+
+
+        {/* Simple Pagination */}
+        {!isLoading && !isEmpty && pagination.totalPages > 1 && (
+          <div className="flex items-center justify-center space-x-2">
+            <button onClick={() => fetchArticles(pagination.page - 1)} disabled={pagination.page <= 1} 
+            className="px-3 py-2 text-sm border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed">Previous
+            </button>
+            
+            <span className="px-3 py-2 text-sm text-gray-700">Page {pagination.page} of {pagination.totalPages}</span>
+            
+            <button
+              onClick={() => fetchArticles(pagination.page + 1)}
+              disabled={pagination.page >= pagination.totalPages}
+              className="px-3 py-2 text-sm border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed">Next
+            </button>
+          </div>
+        )}
+      </div>
+    </MainLayout>
   );
 }
