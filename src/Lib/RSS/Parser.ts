@@ -12,7 +12,7 @@ import { IRSSFeed, IFeedParseResult } from '@/Types/Feed';
 import { DateUtils } from '@/Lib/Utils/DateUtils';
 import { StringUtils } from '@/Lib/Utils/StringUtils';
 
-const LIMIT = 50; // Max articles to fetch per feed
+const LIMIT = 5; // Max articles to fetch per feed
 
 
 

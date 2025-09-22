@@ -2,7 +2,7 @@ name: Deploy Daily Games to VPS
 
 on:
   push:
-    branches: [ main ]
+    branches: [ mvp ]
  
 jobs:
 
