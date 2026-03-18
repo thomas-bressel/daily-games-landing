@@ -50,7 +50,7 @@ export const metadata: Metadata = {
       {
         url: '/og-image.png',
         width: 1200,
-        height: 630,
+        height: 629,
         alt: 'Daily Games - Toute l\'actu gaming en un seul endroit',
       },
     ],
