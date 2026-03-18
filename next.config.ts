@@ -1,10 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Configuration pour le déploiement Docker
+  // Docker deployment configuration
   output: 'standalone',
-  
-  // Configuration pour les images externes (RSS feeds)
+
+  // External image configuration (RSS feeds)
   images: {
     remotePatterns: [
       {
@@ -16,14 +16,14 @@ const nextConfig: NextConfig = {
         hostname: '**',
       },
     ],
-    // Formats d'images supportés
+    // Supported image formats
     formats: ['image/webp', 'image/avif'],
-    // Taille max des images
+    // Maximum image sizes
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
-  
-  // Headers de sécurité pour l'application
+
+  // Security headers for the application
   async headers() {
     return [
       {
@@ -52,7 +52,7 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        // Cache pour les ressources statiques
+        // Cache for static assets
         source: '/static/(.*)',
         headers: [
           {
@@ -64,7 +64,7 @@ const nextConfig: NextConfig = {
     ];
   },
   
-  // Variables d'environnement publiques
+  // Public environment variables
   env: {
     NEXT_PUBLIC_APP_NAME: 'Daily Games',
     NEXT_PUBLIC_APP_VERSION: process.env.npm_package_version || '1.0.0',
