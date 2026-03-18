@@ -1,22 +1,20 @@
 services:
   daily-games:
     container_name: daily-games-app-dev
-    build: 
+    build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     restart: unless-stopped
     ports:
-      - "2000:2000"  # Accès direct sans nginx
+      - "2100:2100"
     networks:
       - daily-games-dev-net
     environment:
       - NODE_ENV=development
     # Volumes pour le hot reload
     volumes:
-      - ./src:/app/src
-      - ./public:/app/public
-      - /app/node_modules  # Évite d'écraser node_modules
-      - /app/.next  # Évite d'écraser le build
+      - .:/app                  # Monte tout le projet
+      - /app/node_modules       # Évite d'écraser node_modules du container
 
   # Configuration nginx simplifiée pour le dev (optionnel)
   nginx-dev:
@@ -37,7 +35,7 @@ services:
         server_name localhost;
 
         location / {
-          proxy_pass http://daily-games:2000;
+          proxy_pass http://daily-games:2100;
           proxy_http_version 1.1;
           proxy_set_header Host \$$host;
           proxy_set_header X-Real-IP \$$remote_addr;

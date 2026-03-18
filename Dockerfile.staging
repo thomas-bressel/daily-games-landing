@@ -1,0 +1,43 @@
+# ── Stage 1: Build ────────────────────────────────────────────────────────────
+FROM node:20-alpine AS builder
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm ci
+
+COPY . .
+
+ENV NEXT_TELEMETRY_DISABLED=1
+ENV NODE_ENV=production
+ENV APP_ENV=staging
+
+RUN npm run build
+
+# ── Stage 2: Staging ───────────────────────────────────────────────────────────
+FROM node:20-alpine AS staging
+
+WORKDIR /app
+
+ENV NODE_ENV=production
+ENV APP_ENV=staging
+ENV NEXT_TELEMETRY_DISABLED=1
+ENV PORT=2100
+ENV HOSTNAME=0.0.0.0
+
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/.next/static ./.next/static
+COPY --from=builder /app/public ./public
+
+RUN addgroup -g 1001 -S nodejs && \
+    adduser -S nextjs -u 1001 && \
+    chown -R nextjs:nodejs /app
+
+USER nextjs
+
+EXPOSE 2100
+
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
+  CMD wget --no-verbose --tries=1 --spider http://localhost:2100 || exit 1
+
+CMD ["node", "server.js"]

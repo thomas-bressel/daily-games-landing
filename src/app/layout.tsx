@@ -4,32 +4,112 @@ import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://daily-games.fr';
 
-/**
- * Create Meta Data
- */
 export const metadata: Metadata = {
-  title: 'Daily Games - Your Retro Gaming News Hub',
-  description: 'Stay updated with the latest retro gaming news, focusing on Amstrad CPC and vintage computing. Your ultimate RSS aggregator for retro gaming enthusiasts.',
-  keywords: 'retro gaming, amstrad cpc, vintage computing, rss aggregator, gaming news',
-  authors: [{ name: 'Daily Games Team' }],
-  robots: 'index, follow',
+  metadataBase: new URL(APP_URL),
+  title: {
+    default: 'Daily Games - Toute l\'actu gaming en un seul endroit',
+    template: '%s | Daily Games',
+  },
+  description:
+    'Daily Games agrège en temps réel l\'actualité gaming depuis 100+ sources : sorties, tests, rétro, esport. Zero bullshit, 100% signal.',
+  keywords: [
+    'actualité gaming',
+    'news jeux vidéo',
+    'agrégateur gaming',
+    'jeux vidéo',
+    'esport',
+    'retro gaming',
+    'amstrad cpc',
+    'daily games',
+  ],
+  authors: [{ name: 'Daily Games', url: APP_URL }],
+  creator: 'Daily Games',
+  publisher: 'Daily Games',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-snippet': -1,
+      'max-image-preview': 'large',
+      'max-video-preview': -1,
+    },
+  },
   openGraph: {
-    title: 'Daily Games - Your Retro Gaming News Hub',
-    description: 'Stay updated with the latest retro gaming news, focusing on Amstrad CPC and vintage computing.',
+    title: 'Daily Games - Toute l\'actu gaming en un seul endroit',
+    description:
+      'Agrégateur gaming en temps réel : 100+ sources, zéro bruit. L\'essentiel du gaming, maintenant.',
+    url: APP_URL,
+    siteName: 'Daily Games',
+    locale: 'fr_FR',
     type: 'website',
-    locale: 'en_US',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Daily Games - Toute l\'actu gaming en un seul endroit',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Daily Games - Your Retro Gaming News Hub',
-    description: 'Stay updated with the latest retro gaming news, focusing on Amstrad CPC and vintage computing.',
+    title: 'Daily Games - Toute l\'actu gaming en un seul endroit',
+    description:
+      'Agrégateur gaming en temps réel : 100+ sources, zéro bruit. L\'essentiel du gaming, maintenant.',
+    images: ['/og-image.png'],
   },
+  alternates: {
+    canonical: APP_URL,
+    types: {
+      'application/rss+xml': `${APP_URL}/api/rss`,
+    },
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180' }],
+  },
+  manifest: '/site.webmanifest',
+  category: 'gaming',
 };
 
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
+  themeColor: '#00FF88',
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Daily Games',
+  url: APP_URL,
+  description:
+    'Agrégateur d\'actualités gaming en temps réel depuis 100+ sources.',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: `${APP_URL}/search?q={search_term_string}`,
+    },
+    'query-input': 'required name=search_term_string',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Daily Games',
+    url: APP_URL,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${APP_URL}/logo-title.png`,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -38,41 +118,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <head>
-        {/* Preconnect to external domains for better performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        
-        {/* Favicon */}
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        
-        {/* Theme color for mobile browsers */}
-        <meta name="theme-color" content="#3B82F6" />
-        <meta name="msapplication-TileColor" content="#3B82F6" />
-        
-        {/* RSS Feed */}
-        <link 
-          rel="alternate" 
-          type="application/rss+xml" 
-          title="Daily Games RSS Feed" 
-          href="/api/rss" 
+        <meta name="msapplication-TileColor" content="#00FF88" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body className={`${inter.className} antialiased`}>
-        {/* Skip to main content for accessibility */}
-        <a href="#main-content" 
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded-md z-50">
-          Skip to main content
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-[#00FF88] text-black px-4 py-2 rounded-md z-50"
+        >
+          Aller au contenu principal
         </a>
-        
-        {/* Main Application */}
-        <div id="main-content">
+        <main id="main-content">
           {children}
-        </div>
+        </main>
       </body>
     </html>
   );

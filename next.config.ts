@@ -4,11 +4,6 @@ const nextConfig: NextConfig = {
   // Configuration pour le déploiement Docker
   output: 'standalone',
   
-  // Configuration Turbopack (nouvelle syntaxe Next.js 15.5.3)
-  turbopack: {
-    // Configuration turbopack si nécessaire
-  },
-  
   // Configuration pour les images externes (RSS feeds)
   images: {
     remotePatterns: [
