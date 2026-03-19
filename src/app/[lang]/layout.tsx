@@ -51,6 +51,15 @@ export default async function LangLayout({ children, params }: { children: React
   const { lang } = await params;
   return (
     <html lang={lang}>
+      <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-QM34GC12K3"></script>
+        <script dangerouslySetInnerHTML={{ __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-QM34GC12K3');
+        `}} />
+      </head>
       <body className={`${inter.className} antialiased`}>{children}</body>
     </html>
   );
