@@ -21,7 +21,7 @@ export default async function LandingPage({ params }: { params: Promise<{ lang: 
     <div className="min-h-screen bg-[#1E1E1E] text-white">
 
       {/* Header */}
-      <header className="bg-[#1E1E1E] border-b border-[#404040] px-6 py-4 sticky top-0 z-10">
+      <header className="bg-[#000000] border-b border-[#404040] px-6 py-4 sticky top-0 z-10">
         <div className="max-w-6xl mx-auto flex flex-wrap gap-4 items-center justify-center md:justify-between">
           <img src="/logo-title.png" alt="Daily Games" className="h-12 w-auto" />
           <div className="flex items-center gap-6">
@@ -36,8 +36,14 @@ export default async function LandingPage({ params }: { params: Promise<{ lang: 
       </header>
 
       {/* Hero */}
-      <section className="px-6 py-24 border-b border-[#404040]">
-        <div className="max-w-4xl mx-auto">
+      <section className="relative px-6 py-24 border-b border-[#404040] overflow-hidden">
+        {/* Background logo */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
+          <img src="/file.svg" alt="" className="w-full h-full object-cover opacity-10 blur-sm" aria-hidden="true" />
+        </div>
+        {/* Gradient overlay: theme green left → red right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a1a0f]/80 via-transparent to-[#3a0010]/80 pointer-events-none" />
+        <div className="relative max-w-4xl mx-auto">
           <span className="inline-block border border-[#156262] text-[#00FF41] text-xs font-mono px-3 py-1 rounded mb-8">
             {tr.hero.badge}
           </span>
@@ -61,7 +67,7 @@ export default async function LandingPage({ params }: { params: Promise<{ lang: 
       </section>
 
       {/* Features */}
-      <section className="px-6 py-20 border-b border-[#404040]">
+      <section className="bg-[#000000] px-6 py-20 border-b border-[#404040]">
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {tr.features.map((feature, i) => (
             <div key={i} className="bg-[#2D2D2D] border border-[#156262] rounded-2xl p-6 hover:border-[#00FF41] transition-colors">
@@ -113,7 +119,7 @@ export default async function LandingPage({ params }: { params: Promise<{ lang: 
       </section>
 
       {/* Footer */}
-      <footer className="px-6 py-10">
+      <footer className="bg-[#000000] px-6 py-10">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-6">
             <img src="/logo-title.png" alt="Daily Games" className="h-12 w-auto"/>
