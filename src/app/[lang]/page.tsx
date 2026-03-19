@@ -41,12 +41,12 @@ export default async function LandingPage({ params }: { params: Promise<{ lang: 
       {/* Hero */}
       <section className="px-6 py-24 border-b border-[#404040]">
         <div className="max-w-4xl mx-auto">
-          <span className="inline-block border border-[#404040] text-[#A0A0A0] text-xs font-mono px-3 py-1 rounded mb-8">
+          <span className="inline-block border border-[#156262] text-[#00FF41] text-xs font-mono px-3 py-1 rounded mb-8">
             {tr.hero.badge}
           </span>
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 leading-tight" style={{ fontFamily: 'Space Grotesk Medium, sans-serif' }}>
-            {tr.hero.title}<br />
-            <span className="text-[#00FF41]">{tr.hero.titleSub}</span>
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 leading-tight scanline" style={{ fontFamily: 'Space Grotesk Medium, sans-serif' }}>
+            <span className="glitch text-warp" data-text={tr.hero.title}>{tr.hero.title}</span><br />
+            <span className="text-[#00FF41] glitch text-warp" data-text={tr.hero.titleSub}>{tr.hero.titleSub}</span>
           </h1>
           <p className="text-[#A0A0A0] text-lg md:text-xl mb-10 max-w-2xl leading-relaxed" style={{ fontFamily: 'Inter Medium, sans-serif' }}>
             {tr.hero.subtitle}
@@ -67,7 +67,7 @@ export default async function LandingPage({ params }: { params: Promise<{ lang: 
       <section className="px-6 py-20 border-b border-[#404040]">
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {tr.features.map((feature, i) => (
-            <div key={i} className="bg-[#2D2D2D] border border-[#404040] rounded-2xl p-6 hover:border-[#00FF41] transition-colors">
+            <div key={i} className="bg-[#2D2D2D] border border-[#156262] rounded-2xl p-6 hover:border-[#00FF41] transition-colors">
               <h3 className="text-white font-bold mb-2 text-sm" style={{ fontFamily: 'Space Grotesk Medium, sans-serif' }}>
                 {feature.title}
               </h3>
@@ -90,7 +90,7 @@ export default async function LandingPage({ params }: { params: Promise<{ lang: 
               {tr.screenshot.subtitle}
             </p>
           </div>
-          <div className="rounded-2xl overflow-hidden border border-[#404040]">
+          <div className="rounded-2xl overflow-hidden border border-[#ff00ff]">
             <img src="/img/screenshot.png" alt={tr.screenshot.alt} className="w-full h-auto" />
           </div>
         </div>
@@ -106,7 +106,7 @@ export default async function LandingPage({ params }: { params: Promise<{ lang: 
             {SOURCES.map((source) => (
               <span
                 key={source}
-                className="border border-[#404040] text-[#A0A0A0] text-xs font-mono px-3 py-1.5 rounded-lg"
+                className="border border-[#156262] text-[#A0A0A0] text-xs font-mono px-3 py-1.5 rounded-lg hover:border-[#00FF41] hover:text-white transition-colors"
               >
                 {source}
               </span>

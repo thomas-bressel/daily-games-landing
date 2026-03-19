@@ -18,8 +18,8 @@ const content = {
         title: '2. Données collectées',
         body: 'L\'extension stocke les données suivantes localement sur votre appareil via chrome.storage.local :',
         list: [
-          'Préférences de filtre — la source ou catégorie sélectionnée.',
-          'Bookmarks — les articles sauvegardés (titre, lien, source, date).',
+          'Préférences de filtre  -- la source ou catégorie sélectionnée.',
+          'Bookmarks  -- les articles sauvegardés (titre, lien, source, date).',
         ],
         note: 'Ces données ne quittent jamais votre appareil.',
       },
@@ -59,8 +59,8 @@ const content = {
         title: '2. Data Collected',
         body: 'The extension stores the following data locally on your device using chrome.storage.local:',
         list: [
-          'Filter preferences — the feed source or category you have selected.',
-          'Bookmarks — saved articles (title, link, source, date).',
+          'Filter preferences  -- the feed source or category you have selected.',
+          'Bookmarks  -- saved articles (title, link, source, date).',
         ],
         note: 'This data never leaves your device.',
       },

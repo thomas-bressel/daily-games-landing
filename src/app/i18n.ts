@@ -9,12 +9,12 @@ export const t = {
       privacy: 'Confidentialité',
     },
     hero: {
-      badge: 'Extension Chrome — Gratuite',
+      badge: 'Extension Chrome  -- Gratuite',
       title: 'Toute l\'actu gaming.',
       titleSub: 'En un onglet.',
-      subtitle: 'Daily Games remplace votre nouvel onglet par un flux d\'actualités gaming agrégé depuis 20+ sources. Retrogaming, homebrew, nextgen — sans bruit.',
+      subtitle: 'Daily Games remplace votre nouvel onglet par un flux d\'actualités gaming agrégé depuis 20+ sources. Retrogaming, homebrew, nextgen  -- sans bruit.',
       cta: 'Installer l\'extension',
-      ctaSub: 'Chrome Web Store — gratuit',
+      ctaSub: 'Chrome Web Store  -- gratuit',
     },
     features: [
       { title: 'Flux en temps réel', desc: '20+ sources agrégées et mises à jour automatiquement.' },
@@ -42,12 +42,12 @@ export const t = {
       privacy: 'Privacy',
     },
     hero: {
-      badge: 'Chrome Extension — Free',
+      badge: 'Chrome Extension  -- Free',
       title: 'All your gaming news.',
       titleSub: 'One tab.',
-      subtitle: 'Daily Games replaces your new tab with a gaming news feed aggregated from 20+ sources. Retrogaming, homebrew, next-gen — zero noise.',
+      subtitle: 'Daily Games replaces your new tab with a gaming news feed aggregated from 20+ sources. Retrogaming, homebrew, next-gen  -- zero noise.',
       cta: 'Install extension',
-      ctaSub: 'Chrome Web Store — free',
+      ctaSub: 'Chrome Web Store  -- free',
     },
     features: [
       { title: 'Real-time feed', desc: '20+ sources aggregated and updated automatically.' },
