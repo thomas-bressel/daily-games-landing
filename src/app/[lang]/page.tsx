@@ -22,16 +22,13 @@ export default async function LandingPage({ params }: { params: Promise<{ lang: 
 
       {/* Header */}
       <header className="bg-[#1E1E1E] border-b border-[#404040] px-6 py-4 sticky top-0 z-10">
-        <div className="max-w-6xl mx-auto flex items-center justify-between">
+        <div className="max-w-6xl mx-auto flex flex-wrap gap-4 items-center justify-center md:justify-between">
           <img src="/logo-title.png" alt="Daily Games" className="h-12 w-auto" />
           <div className="flex items-center gap-6">
             <a href={`/${otherLang}`} className="text-[#A0A0A0] hover:text-white text-xs font-mono uppercase tracking-widest transition-colors">
               {otherLang}
             </a>
-            <a
-              href={CHROME_STORE_URL}
-              className="border border-[#00FF41] text-[#00FF41] px-4 py-2 rounded-lg text-sm font-mono hover:bg-[#00FF41] hover:text-black transition-colors"
-            >
+            <a href={CHROME_STORE_URL} className="border border-[#00FF41] text-[#00FF41] px-4 py-2 rounded-lg text-sm font-mono hover:bg-[#00FF41] hover:text-black transition-colors">
               {tr.nav.install}
             </a>
           </div>

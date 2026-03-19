@@ -10,7 +10,7 @@ export const t = {
     },
     hero: {
       badge: 'Extension Chrome  -- Gratuite',
-      title: 'Toute l\'actu gaming.',
+      title: 'Toute TON actu gaming.',
       titleSub: 'En un onglet.',
       subtitle: 'Daily Games remplace votre nouvel onglet par un flux d\'actualités gaming agrégé depuis 20+ sources. Retrogaming, homebrew, nextgen  -- sans bruit.',
       cta: 'Installer l\'extension',

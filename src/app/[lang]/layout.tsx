@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Loc
   return {
     metadataBase: new URL(APP_URL),
     title: {
-      default: isFr ? 'Daily Games - Toute l\'actu gaming en un seul endroit' : 'Daily Games - All your gaming news in one tab',
+      default: isFr ? 'Daily Games - Toute ton actu gaming en un seul endroit' : 'Daily Games - All your gaming news in one tab',
       template: '%s | Daily Games',
     },
     description: isFr
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Loc
       languages: { fr: `${APP_URL}/fr`, en: `${APP_URL}/en` },
     },
     openGraph: {
-      title: isFr ? 'Daily Games - Toute l\'actu gaming en un seul endroit' : 'Daily Games - All your gaming news in one tab',
+      title: isFr ? 'Daily Games - Toute ton actu gaming en un seul endroit' : 'Daily Games - All your gaming news in one tab',
       description: isFr ? 'Agrégateur gaming en temps réel : 20+ sources, zéro bruit.' : 'Real-time gaming aggregator: 20+ sources, zero noise.',
       url: `${APP_URL}/${lang}`,
       siteName: 'Daily Games',
