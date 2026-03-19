@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Loc
   };
 }
 
-export default async function LangLayout({ children, params }: { children: React.ReactNode; params: Promise<{ lang: Locale }> }) {
+export default async function LangLayout({ children, params }: { children: React.ReactNode; params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   return (
     <html lang={lang}>
