@@ -100,20 +100,20 @@ export default async function PrivacyPage({ params }: { params: Promise<{ lang: 
           {c.back}
         </a>
         <h1 className="text-3xl font-bold mb-2" style={{ fontFamily: 'Space Grotesk Medium, sans-serif' }}>{c.title}</h1>
-        <p className="text-[#404040] text-xs font-mono mb-12">{c.updated}</p>
+        <p className="text-[#A0A0A0] text-xs font-mono mb-12">{c.updated}</p>
 
         <div className="space-y-10">
           {c.sections.map((section, i) => (
             <div key={i} className="border-t border-[#404040] pt-8">
-              <h2 className="text-sm font-mono text-[#707070] uppercase tracking-widest mb-3">{section.title}</h2>
-              <p className="text-[#707070] leading-relaxed text-sm" style={{ fontFamily: 'Inter Medium, sans-serif' }}>{section.body}</p>
+              <h2 className="text-sm font-mono text-[#A0A0A0] uppercase tracking-widest mb-3">{section.title}</h2>
+              <p className="text-[#D0D0D0] leading-relaxed text-sm" style={{ fontFamily: 'Inter Medium, sans-serif' }}>{section.body}</p>
               {'list' in section && section.list && (
-                <ul className="mt-3 space-y-1 list-disc list-inside text-[#707070] text-sm">
+                <ul className="mt-3 space-y-1 list-disc list-inside text-[#D0D0D0] text-sm">
                   {section.list.map((item, j) => <li key={j}>{item}</li>)}
                 </ul>
               )}
               {'note' in section && section.note && (
-                <p className="mt-3 text-[#404040] text-xs font-mono">{section.note}</p>
+                <p className="mt-3 text-[#A0A0A0] text-xs font-mono">{section.note}</p>
               )}
               {'email' in section && section.email && (
                 <a href={`mailto:${section.email}`} className="text-[#00FF41] text-sm font-mono hover:underline mt-2 inline-block">
