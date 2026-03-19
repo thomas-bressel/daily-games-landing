@@ -61,6 +61,14 @@ export default async function LandingPage({ params }: { params: Promise<{ lang: 
             >
               {tr.hero.cta}
             </a>
+            <a
+              href="https://www.paypal.com/donate/?hosted_button_id=PW6CXDP49HF5L"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center border border-[#ff00ff] text-[#ff00ff] px-8 py-3 rounded-lg font-mono text-sm font-bold hover:bg-[#ff00ff] hover:text-black transition-colors"
+            >
+              ♥ {tr.hero.donate}
+            </a>
           </div>
           <p className="text-[#A0A0A0] text-xs font-mono mt-3">{tr.hero.ctaSub}</p>
         </div>
@@ -126,6 +134,14 @@ export default async function LandingPage({ params }: { params: Promise<{ lang: 
             <span className="text-[#A0A0A0] text-xs font-mono hidden md:block">{tr.footer.tagline}</span>
           </div>
           <div className="flex items-center gap-6 text-xs font-mono text-[#A0A0A0]">
+            <a
+              href="https://www.paypal.com/donate/?hosted_button_id=PW6CXDP49HF5L"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-[#ff00ff] text-[#ff00ff] px-3 py-1.5 rounded-lg hover:bg-[#ff00ff] hover:text-black transition-colors"
+            >
+              ♥ {tr.footer.donate}
+            </a>
             <a href={`/${lang}/privacy`} className="hover:text-[#00FF41] transition-colors">{tr.footer.privacy}</a>
             <a href={`/${otherLang}`} className="hover:text-white transition-colors uppercase tracking-widest">{otherLang}</a>
             <span>{tr.footer.rights}</span>

@@ -15,6 +15,7 @@ export const t = {
       subtitle: 'Daily Games remplace votre nouvel onglet par un flux d\'actualités gaming agrégé depuis 20+ sources. Retrogaming, homebrew, nextgen  -- sans bruit.',
       cta: 'Installer l\'extension',
       ctaSub: 'Chrome Web Store  -- gratuit',
+      donate: 'Soutenir le projet',
     },
     features: [
       { title: 'Flux en temps réel', desc: '20+ sources agrégées et mises à jour automatiquement.' },
@@ -34,6 +35,7 @@ export const t = {
       tagline: 'Fait pour les gamers, par un gamer.',
       privacy: 'Confidentialité',
       rights: '© 2026 Daily Games.',
+      donate: 'Soutenir le projet',
     },
   },
   en: {
@@ -48,6 +50,7 @@ export const t = {
       subtitle: 'Daily Games replaces your new tab with a gaming news feed aggregated from 20+ sources. Retrogaming, homebrew, next-gen  -- zero noise.',
       cta: 'Install extension',
       ctaSub: 'Chrome Web Store  -- free',
+      donate: 'Support the project',
     },
     features: [
       { title: 'Real-time feed', desc: '20+ sources aggregated and updated automatically.' },
@@ -67,6 +70,7 @@ export const t = {
       tagline: 'Built for gamers, by a gamer.',
       privacy: 'Privacy',
       rights: '© 2026 Daily Games.',
+      donate: 'Support the project',
     },
   },
 } as const;
