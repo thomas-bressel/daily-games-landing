@@ -7,14 +7,16 @@ export const t = {
     nav: {
       install: 'Installer l\'extension',
       privacy: 'Confidentialité',
+      label: 'Navigation principale',
+      skipToContent: 'Aller au contenu',
     },
     hero: {
-      badge: 'Extension Chrome  -- Gratuite',
+      badge: 'Extension Chrome · Gratuite',
       title: 'Toute TON actu gaming.',
       titleSub: 'En un onglet.',
       subtitle: 'Trop de sources, pas assez de temps. Daily Games agrège 20+ flux gaming dans ton nouvel onglet — rétro, indie, next-gen — sans algo, sans pub, sans compte.',
       cta: 'Installer l\'extension',
-      ctaSub: 'Chrome Web Store  -- gratuit',
+      ctaSub: 'Chrome Web Store · gratuit',
       donate: 'Soutenir le projet',
     },
     features: [
@@ -27,6 +29,7 @@ export const t = {
       title: 'Sources agrégées',
       suggest: 'Une source manque ?',
       suggestLink: 'Suggérer une source →',
+      suggestLinkText: 'Suggérer une source',
     },
     roadmap: {
       title: 'C\'est une v1.0',
@@ -53,14 +56,16 @@ export const t = {
     nav: {
       install: 'Install extension',
       privacy: 'Privacy',
+      label: 'Main navigation',
+      skipToContent: 'Skip to content',
     },
     hero: {
-      badge: 'Chrome Extension  -- Free',
+      badge: 'Chrome Extension · Free',
       title: 'All your gaming news.',
       titleSub: 'One tab.',
       subtitle: 'Too many sources, not enough time. Daily Games aggregates 20+ gaming feeds into your new tab — retro, indie, next-gen — no algorithm, no ads, no account.',
       cta: 'Install extension',
-      ctaSub: 'Chrome Web Store  -- free',
+      ctaSub: 'Chrome Web Store · free',
       donate: 'Support the project',
     },
     features: [
@@ -73,6 +78,7 @@ export const t = {
       title: 'Aggregated sources',
       suggest: 'Missing a source?',
       suggestLink: 'Suggest a source →',
+      suggestLinkText: 'Suggest a source',
     },
     roadmap: {
       title: 'This is v1.0',
