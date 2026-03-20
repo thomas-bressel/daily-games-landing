@@ -4,7 +4,7 @@ export async function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
 }
 
-const CHROME_STORE_URL = '#';
+// const CHROME_STORE_URL = 'https://chromewebstore.google.com/detail/daily-games/VOTRE_ID_ICI';
 
 const SOURCES = [
   // Next-Gen & Pro
@@ -35,9 +35,11 @@ export default async function LandingPage({ params }: { params: Promise<{ lang: 
             <a href={`/${otherLang}`} className="text-[#A0A0A0] hover:text-white text-xs font-mono uppercase tracking-widest transition-colors">
               {otherLang}
             </a>
+            {/* TODO: décommenter quand l'extension est publiée sur le Chrome Web Store
             <a href={CHROME_STORE_URL} className="border border-[#00FF41] text-[#00FF41] px-4 py-2 rounded-lg text-sm font-mono hover:bg-[#00FF41] hover:text-black transition-colors">
               {tr.nav.install}
             </a>
+            */}
           </div>
         </div>
       </header>
@@ -62,12 +64,14 @@ export default async function LandingPage({ params }: { params: Promise<{ lang: 
             {tr.hero.subtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
+            {/* TODO: décommenter quand l'extension est publiée sur le Chrome Web Store
             <a
               href={CHROME_STORE_URL}
               className="inline-flex items-center justify-center border border-[#00FF41] bg-[#00FF41] text-black px-8 py-3 rounded-lg font-mono text-sm font-bold hover:bg-transparent hover:text-[#00FF41] transition-colors"
             >
               {tr.hero.cta}
             </a>
+            */}
             <a
               href="https://www.paypal.com/donate/?hosted_button_id=PW6CXDP49HF5L"
               target="_blank"
