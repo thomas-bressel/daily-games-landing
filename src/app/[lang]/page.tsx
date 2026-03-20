@@ -177,9 +177,10 @@ export default async function LandingPage({ params }: { params: Promise<{ lang: 
               href="https://www.paypal.com/donate/?hosted_button_id=PW6CXDP49HF5L"
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-[#ff00ff] text-[#ff00ff] px-3 py-1.5 rounded-lg hover:bg-[#ff00ff] hover:text-black transition-colors"
+              className="flex items-center gap-2 border border-[#ff00ff] text-[#ff00ff] px-3 py-1.5 rounded-lg hover:bg-[#ff00ff] hover:text-black transition-colors"
             >
-              ♥ {tr.footer.donate}
+              <img src="/img/logos--paypal.svg" alt="PayPal" className="h-4 w-auto" />
+              {tr.footer.donate}
             </a>
             <a href={`/${lang}/privacy`} className="hover:text-[#00FF41] transition-colors">{tr.footer.privacy}</a>
             <a href={`/${otherLang}`} className="hover:text-white transition-colors uppercase tracking-widest">{otherLang}</a>
