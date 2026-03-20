@@ -72,9 +72,10 @@ export default async function LandingPage({ params }: { params: Promise<{ lang: 
               href="https://www.paypal.com/donate/?hosted_button_id=PW6CXDP49HF5L"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center border border-[#ff00ff] text-[#ff00ff] px-8 py-3 rounded-lg font-mono text-sm font-bold hover:bg-[#ff00ff] hover:text-black transition-colors"
+              className="inline-flex items-center justify-center gap-2 border border-[#2790c3] text-[#2790c3] px-8 py-3 rounded-lg font-mono text-sm font-bold hover:bg-[#2790c3] hover:text-white transition-colors"
             >
-              ♥ {tr.hero.donate}
+              <img src="/img/logos--paypal.svg" alt="PayPal" className="h-4 w-auto" />
+              {tr.hero.donate}
             </a>
           </div>
           <p className="text-[#A0A0A0] text-xs font-mono mt-3">{tr.hero.ctaSub}</p>
@@ -177,7 +178,7 @@ export default async function LandingPage({ params }: { params: Promise<{ lang: 
               href="https://www.paypal.com/donate/?hosted_button_id=PW6CXDP49HF5L"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 border border-[#ff00ff] text-[#ff00ff] px-3 py-1.5 rounded-lg hover:bg-[#ff00ff] hover:text-black transition-colors"
+              className="flex items-center gap-2 border border-[#2790c3] text-[#2790c3] px-3 py-1.5 rounded-lg hover:bg-[#2790c3] hover:text-white transition-colors"
             >
               <img src="/img/logos--paypal.svg" alt="PayPal" className="h-4 w-auto" />
               {tr.footer.donate}
