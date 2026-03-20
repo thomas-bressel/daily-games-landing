@@ -7,9 +7,16 @@ export async function generateStaticParams() {
 const CHROME_STORE_URL = '#';
 
 const SOURCES = [
-  'Indie Retro News', 'MO5', 'Atariage', 'Itch.io', 'Game Radar',
-  'Amstrad.eu', 'Octoate', 'Abandonware France', 'Indie DB',
-  'Reddit', 'Scene World', 'Retro RGB', 'Le Bistro', 'Amstariga',
+  // Next-Gen & Pro
+  'Jeux Video.com', 'Canard PC', 'Origami', 'VGC', 'GamesRadar+', 'Le Bistro du jeu vidéo',
+  // Retro Gaming
+  'Association MO5', 'Rom Game', 'Abandonware France', 'Back in Toys TV', 'Reddit Retrogaming', 'Vintage is the New Old',
+  // Indie & Découvertes
+  'IndieMag', 'At0mium', 'Indie Retro News', 'Indie DB', 'Itch.io News',
+  // Homebrew & Tech
+  'Wololo.net', 'Retro RGB', 'GBAtemp', 'Scene World',
+  // Machines (Niche)
+  'Amstrad.eu',
 ];
 
 export default async function LandingPage({ params }: { params: Promise<{ lang: Locale }> }) {
@@ -132,6 +139,29 @@ export default async function LandingPage({ params }: { params: Promise<{ lang: 
               {tr.sources.suggestLink}
             </a>
           </p>
+        </div>
+      </section>
+
+      {/* Roadmap */}
+      <section className="px-6 py-16 border-b border-[#404040]">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-sm font-mono text-[#A0A0A0] uppercase tracking-widest mb-2">
+            {tr.roadmap.title}
+          </h2>
+          <p className="text-[#A0A0A0] text-sm mb-8" style={{ fontFamily: 'Inter Medium, sans-serif' }}>
+            {tr.roadmap.subtitle}
+          </p>
+          <ul className="flex flex-col gap-3">
+            {tr.roadmap.items.map((item, i) => (
+              <li key={i} className="flex items-start gap-3">
+                <span className="text-[#00FF41] font-mono text-xs mt-0.5">→</span>
+                <div>
+                  <span className="text-white text-sm font-bold" style={{ fontFamily: 'Space Grotesk Medium, sans-serif' }}>{item.label}</span>
+                  <span className="text-[#A0A0A0] text-sm font-mono ml-2">— {item.note}</span>
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
