@@ -25,6 +25,8 @@ export const t = {
     ],
     sources: {
       title: 'Sources agrégées',
+      suggest: 'Une source manque ?',
+      suggestLink: 'Suggérer une source →',
     },
     screenshot: {
       title: 'Votre nouvel onglet, réinventé.',
@@ -60,6 +62,8 @@ export const t = {
     ],
     sources: {
       title: 'Aggregated sources',
+      suggest: 'Missing a source?',
+      suggestLink: 'Suggest a source →',
     },
     screenshot: {
       title: 'Your new tab, reinvented.',
