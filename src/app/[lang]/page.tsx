@@ -126,9 +126,7 @@ export default async function LandingPage({ params }: { params: Promise<{ lang: 
           <p className="mt-6 text-xs font-mono text-[#A0A0A0]">
             {tr.sources.suggest}{' '}
             <a
-              href="https://github.com/thomas-bressel/daily-games-landing/issues/new?title=Suggestion+de+source&body=**Nom+de+la+source+:**%0A**URL+du+flux+RSS+:**%0A**Catégorie+:**+rétro+/+indie+/+homebrew+/+next-gen"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="mailto:contact@daily-games.eu?subject=Suggestion%20de%20source&body=Nom%20de%20la%20source%20%3A%0AURL%20du%20flux%20RSS%20%3A%0ACat%C3%A9gorie%20%3A%20r%C3%A9tro%20%2F%20indie%20%2F%20homebrew%20%2F%20next-gen"
               className="text-[#00FF41] hover:underline"
             >
               {tr.sources.suggestLink}
