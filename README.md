@@ -1,42 +1,43 @@
-# Project Structure
+# Daily Games — Landing Page
+
+Landing page officielle de l'extension Chrome **Daily Games**.
+
+🌐 [daily-games.eu](https://www.daily-games.eu)
+
+---
+
+## Stack
+
+- **Next.js** (App Router, static export)
+- **Tailwind CSS**
+- **i18n** maison — FR / EN via `src/app/i18n.ts`
+- Déployé via **Docker + Nginx** sur VPS
+
+## Structure
+
+```
 src/
-├── app/api/         → 🎯 CONTROLLERS + ROUTES
-├── Services/        → 🎯 APPLICATION LAYER (Use Cases)
-├── Models/          → 🎯 DOMAIN LAYER (Entities)
-├── Lib/            → 🎯 INFRASTRUCTURE (Repositories)
-└── Types/          → 🎯 DOMAIN (Interfaces)
-
-
-
-**Parser.ts**
-RSSParser class : This file contains the main parser class to get RSS feed from a given URL. 
-
-**rss-parser library**
-It transforms the XML data into an easily manageable JavaScript object.
-
-```typescript
-import Parser from 'rss-parser';
+└── app/
+    ├── [lang]/
+    │   ├── page.tsx        → Page principale (hero, features, sources, roadmap)
+    │   └── privacy/        → Page confidentialité
+    ├── i18n.ts             → Traductions FR/EN
+    └── layout.tsx          → Layout global
 ```
 
-Declare the RSSParser class with a constructor to initialize the parser with custom options :
+## Développement
 
-```typescript
-  private parser: Parser;
-
-    constructor() {
-        this.parser = new Parser({
-      timeout: 10000,
-      headers: {
-        'User-Agent': 'daily-games/1.0.0',
-      },
-    });
-    }
+```bash
+npm install
+npm run dev       # http://localhost:3000
+npm run build     # Build statique dans /out
 ```
 
-Then into a try/catch block, fetch the RSS feed from the provided URL using the parseURL method of the rss-parser library. 
+## Déploiement
 
-```typescript
-      const feed = await this.parser.parseURL(url);
-```
+Le build est conteneurisé et déployé via Ansible sur un VPS.
+Le dossier `out/` est servi par Nginx en static.
 
+---
 
+Fait pour les gamers, par un gamer.
