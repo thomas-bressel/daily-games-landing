@@ -8,15 +8,15 @@ export async function generateStaticParams() {
 
 const SOURCES = [
   // Next-Gen & Pro
-  'Jeux Video.com', 'Canard PC', 'Origami', 'VGC', 'GamesRadar+', 'Le Bistro du jeu vidéo',
+  'Jeux Video.com', 'Canard PC', 'Origami', 'VGC', 'GamesRadar+', 'Le Bistro du jeu vidéo', 'Sega-Mag',
   // Retro Gaming
-  'Association MO5', 'Rom Game', 'Abandonware France', 'Back in Toys TV', 'Reddit Retrogaming', 'Vintage is the New Old',
+  'Recalbox', 'Association MO5', 'Rom Game', 'Abandonware France', 'Back in Toys TV', 'Conkerax', 'Old School Is Beautifull', 'Le joueur du grenier', 'Reddit Retrogaming', 'Vintage is the New Old',
   // Indie & Découvertes
   'IndieMag', 'At0mium', 'Indie Retro News', 'Indie DB', 'Itch.io News',
   // Homebrew & Tech
   'Wololo.net', 'Retro RGB', 'GBAtemp', 'Scene World',
-  // Machines (Niche)
-  'Amstrad.eu',
+  // Machines
+  'Amstrad.eu', 'Vretro Computing'
 ];
 
 export default async function LandingPage({ params }: { params: Promise<{ lang: Locale }> }) {

@@ -15,7 +15,7 @@ assignees: thomas-bressel
 - [ ] Next-Gen & Pro
 - [ ] Indie & Découvertes
 - [ ] Homebrew & Tech
-- [ ] Machines (Niche)
+- [ ] Machines
 
 **Langue / Language :**
 - [ ] FR
