@@ -11,12 +11,12 @@ export const t = {
       skipToContent: 'Aller au contenu',
     },
     hero: {
-      badge: 'Extension Chrome · Gratuite',
+      badge: 'Extension navigateur · Gratuite',
       title: 'Toute TON actu gaming.',
       titleSub: 'En un onglet.',
       subtitle: 'Trop de sources, pas assez de temps. Daily Games agrège 35+ flux gaming dans ton nouvel onglet — rétro, indie, next-gen — sans algo, sans pub, sans compte.',
-      cta: 'Installer l\'extension',
-      ctaSub: 'Chrome Web Store · gratuit',
+      ctaChrome: 'Installer sur Chrome',
+      ctaFirefox: 'Installer sur Firefox',
       donate: 'Soutenir le projet',
     },
     features: [
@@ -60,12 +60,12 @@ export const t = {
       skipToContent: 'Skip to content',
     },
     hero: {
-      badge: 'Chrome Extension · Free',
+      badge: 'Browser Extension · Free',
       title: 'All your gaming news.',
       titleSub: 'One tab.',
       subtitle: 'Too many sources, not enough time. Daily Games aggregates 35+ gaming feeds into your new tab — retro, indie, next-gen — no algorithm, no ads, no account.',
-      cta: 'Install extension',
-      ctaSub: 'Chrome Web Store · free',
+      ctaChrome: 'Install on Chrome',
+      ctaFirefox: 'Install on Firefox',
       donate: 'Support the project',
     },
     features: [

@@ -4,7 +4,8 @@ export async function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
 }
 
-// const CHROME_STORE_URL = 'https://chromewebstore.google.com/detail/daily-games/VOTRE_ID_ICI';
+const CHROME_STORE_URL = 'https://chromewebstore.google.com/detail/daily-games/VOTRE_ID_ICI';
+const FIREFOX_STORE_URL = 'https://addons.mozilla.org/fr/firefox/addon/dailygames/';
 
 const SOURCES = [
   // Next-Gen & Pro
@@ -40,11 +41,14 @@ export default async function LandingPage({ params }: { params: Promise<{ lang: 
             <a href={`/${otherLang}`} aria-label={lang === 'fr' ? 'Switch to English' : 'Passer en français'} className="text-[#A0A0A0] hover:text-white text-xs font-mono uppercase tracking-widest transition-colors">
               {otherLang}
             </a>
-            {/* TODO: décommenter quand l'extension est publiée sur le Chrome Web Store
-            <a href={CHROME_STORE_URL} className="border border-[#00FF41] text-[#00FF41] px-4 py-2 rounded-lg text-sm font-mono hover:bg-[#00FF41] hover:text-black transition-colors">
-              {tr.nav.install}
+            <span className="inline-flex items-center gap-1.5 border border-[#404040] text-[#606060] px-4 py-2 rounded-lg text-sm font-mono cursor-not-allowed" title="Bientôt disponible">
+              <img src="/img/devicon--chrome.svg" alt="" className="h-4 w-auto opacity-40" />
+              Chrome
+            </span>
+            <a href={FIREFOX_STORE_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 border border-[#FF7139] text-[#FF7139] px-4 py-2 rounded-lg text-sm font-mono hover:bg-[#FF7139] hover:text-white transition-colors">
+              <img src="/img/logos--firefox.svg" alt="" className="h-4 w-auto" />
+              Firefox
             </a>
-            */}
           </nav>
         </div>
       </header>
@@ -71,15 +75,23 @@ export default async function LandingPage({ params }: { params: Promise<{ lang: 
             {tr.hero.subtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            {/* TODO: décommenter quand l'extension est publiée sur le Chrome Web Store
-            <a
-              href={CHROME_STORE_URL}
-              className="inline-flex items-center justify-center border border-[#00FF41] bg-[#00FF41] text-black px-8 py-3 rounded-lg font-mono text-sm font-bold hover:bg-transparent hover:text-[#00FF41] transition-colors"
+            <span
+              className="inline-flex items-center justify-center gap-2 border border-[#404040] text-[#606060] px-8 py-3 rounded-lg font-mono text-sm font-bold cursor-not-allowed"
+              title="Bientôt disponible sur Chrome Web Store"
             >
-              {tr.hero.cta}
-            </a>
-            */}
+              <img src="/img/devicon--chrome.svg" alt="" className="h-5 w-auto opacity-40" />
+              {tr.hero.ctaChrome}
+            </span>
             <a
+              href={FIREFOX_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 border border-[#FF7139] text-[#FF7139] px-8 py-3 rounded-lg font-mono text-sm font-bold hover:bg-[#FF7139] hover:text-white transition-colors"
+            >
+              <img src="/img/logos--firefox.svg" alt="" className="h-5 w-auto" />
+              {tr.hero.ctaFirefox}
+            </a>
+            <
               href="https://www.paypal.com/donate/?hosted_button_id=PW6CXDP49HF5L"
               target="_blank"
               rel="noopener noreferrer"
