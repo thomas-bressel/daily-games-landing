@@ -91,7 +91,7 @@ export default async function LandingPage({ params }: { params: Promise<{ lang: 
               <img src="/img/logos--firefox.svg" alt="" className="h-5 w-auto" />
               {tr.hero.ctaFirefox}
             </a>
-            <
+            <a
               href="https://www.paypal.com/donate/?hosted_button_id=PW6CXDP49HF5L"
               target="_blank"
               rel="noopener noreferrer"
@@ -102,7 +102,6 @@ export default async function LandingPage({ params }: { params: Promise<{ lang: 
               {tr.hero.donate}
             </a>
           </div>
-          <p className="text-[#A0A0A0] text-xs font-mono mt-3">{tr.hero.ctaSub}</p>
         </div>
       </section>
 
