@@ -104,6 +104,21 @@ export default async function LandingPage({ params }: { params: Promise<{ lang: 
               {tr.hero.donate}
             </a>
           </div>
+          <div className="flex items-center gap-4 mt-6">
+            <span className="text-[#606060] text-xs font-mono">{lang === 'fr' ? 'Non supporté :' : 'Not supported:'}</span>
+            <span className="flex items-center gap-1.5 text-[#606060] text-xs font-mono line-through opacity-50">
+              <img src="/img/devicon--opera.svg" alt="Opera" className="h-4 w-auto grayscale" />
+              Opera
+            </span>
+            <span className="flex items-center gap-1.5 text-[#606060] text-xs font-mono line-through opacity-50">
+              <img src="/img/logos--vivaldi-icon.svg" alt="Vivaldi" className="h-4 w-auto grayscale" />
+              Vivaldi
+            </span>
+            <span className="flex items-center gap-1.5 text-[#606060] text-xs font-mono line-through opacity-50">
+              <img src="/img/logos--safari.svg" alt="Safari" className="h-4 w-auto grayscale" />
+              Safari
+            </span>
+          </div>
         </div>
       </section>
 
