@@ -191,6 +191,27 @@ export default async function LandingPage({ params }: { params: Promise<{ lang: 
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="px-6 py-16 border-b border-[#404040]">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-sm font-mono text-[#A0A0A0] uppercase tracking-widest mb-8">
+            {tr.faq.title}
+          </h2>
+          <ul className="flex flex-col gap-6">
+            {tr.faq.items.map((item, i) => (
+              <li key={i} className="border border-[#404040] rounded-xl p-6 hover:border-[#156262] transition-colors">
+                <p className="text-white font-bold text-sm mb-2" style={{ fontFamily: 'Space Grotesk Medium, sans-serif' }}>
+                  {item.q}
+                </p>
+                <p className="text-[#A0A0A0] text-sm leading-relaxed" style={{ fontFamily: 'Inter Medium, sans-serif' }}>
+                  {item.a}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       </main>
 
       {/* Footer */}

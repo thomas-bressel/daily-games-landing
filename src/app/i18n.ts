@@ -45,6 +45,27 @@ export const t = {
       subtitle: 'Un flux propre, des filtres accessibles, vos bookmarks à portée de main.',
       alt: 'Screenshot de l\'extension Daily Games',
     },
+    faq: {
+      title: 'Questions fréquentes',
+      items: [
+        {
+          q: 'Comment installer Daily Games ?',
+          a: 'Clique sur "Installer sur Chrome" ou "Installer sur Firefox", confirme l\'installation, puis ouvre un nouvel onglet — Daily Games s\'affiche automatiquement.',
+        },
+        {
+          q: 'Sur quels navigateurs ça fonctionne ?',
+          a: 'Daily Games fonctionne sur Chrome, Firefox, LibreWolf, Edge et Brave. Il n\'est pas compatible avec Opera, Vivaldi et Safari.',
+        },
+        {
+          q: 'L\'extension ne s\'affiche pas dans mon nouvel onglet ?',
+          a: 'Une autre extension contrôle peut-être ton nouvel onglet (Speed Dial, Momentum…). Désactive-la temporairement pour laisser Daily Games s\'afficher.',
+        },
+        {
+          q: 'Ça fonctionne sur mobile ?',
+          a: 'Non, les extensions navigateur ne sont pas supportées sur mobile. Daily Games est uniquement disponible sur navigateur desktop.',
+        },
+      ],
+    },
     footer: {
       tagline: 'Fait pour les gamers, par un gamer.',
       privacy: 'Confidentialité',
@@ -93,6 +114,27 @@ export const t = {
       title: 'Your new tab, reinvented.',
       subtitle: 'Clean feed, accessible filters, bookmarks at hand.',
       alt: 'Daily Games extension screenshot',
+    },
+    faq: {
+      title: 'FAQ',
+      items: [
+        {
+          q: 'How do I install Daily Games?',
+          a: 'Click "Install on Chrome" or "Install on Firefox", confirm the installation, then open a new tab — Daily Games appears automatically.',
+        },
+        {
+          q: 'Which browsers are supported?',
+          a: 'Daily Games works on Chrome, Firefox, LibreWolf, Edge and Brave. It is not compatible with Opera, Vivaldi and Safari.',
+        },
+        {
+          q: 'The extension doesn\'t show up in my new tab?',
+          a: 'Another extension may be controlling your new tab (Speed Dial, Momentum…). Disable it temporarily to let Daily Games appear.',
+        },
+        {
+          q: 'Does it work on mobile?',
+          a: 'No, browser extensions are not supported on mobile. Daily Games is only available on desktop browsers.',
+        },
+      ],
     },
     footer: {
       tagline: 'Built for gamers, by a gamer.',
