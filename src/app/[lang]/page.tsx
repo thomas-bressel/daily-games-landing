@@ -105,17 +105,17 @@ export default async function LandingPage({ params }: { params: Promise<{ lang: 
             </a>
           </div>
           <div className="flex items-center gap-4 mt-6">
-            <span className="text-[#606060] text-xs font-mono">{lang === 'fr' ? 'Non supporté :' : 'Not supported:'}</span>
-            <span className="flex items-center gap-1.5 text-[#606060] text-xs font-mono line-through opacity-50">
-              <img src="/img/devicon--opera.svg" alt="Opera" className="h-4 w-auto grayscale" />
+            <span className="text-[#A0A0A0] text-xs font-mono">{lang === 'fr' ? 'Non supporté :' : 'Not supported:'}</span>
+            <span className="flex items-center gap-1.5 text-white text-xs font-mono line-through">
+              <img src="/img/devicon--opera.svg" alt="Opera" className="h-4 w-auto" />
               Opera
             </span>
-            <span className="flex items-center gap-1.5 text-[#606060] text-xs font-mono line-through opacity-50">
-              <img src="/img/logos--vivaldi-icon.svg" alt="Vivaldi" className="h-4 w-auto grayscale" />
+            <span className="flex items-center gap-1.5 text-white text-xs font-mono line-through">
+              <img src="/img/logos--vivaldi-icon.svg" alt="Vivaldi" className="h-4 w-auto" />
               Vivaldi
             </span>
-            <span className="flex items-center gap-1.5 text-[#606060] text-xs font-mono line-through opacity-50">
-              <img src="/img/logos--safari.svg" alt="Safari" className="h-4 w-auto grayscale" />
+            <span className="flex items-center gap-1.5 text-white text-xs font-mono line-through">
+              <img src="/img/logos--safari.svg" alt="Safari" className="h-4 w-auto" />
               Safari
             </span>
           </div>
